@@ -1,0 +1,57 @@
+{
+  "restaurant_name": "Italian Restaurant",
+  "location": null,
+  "description": "This restaurant specializes in classic Italian dishes, offering traditional pasta and grilled meats. The menu features a selection of pasta, risotto, and steak.",
+  "currency": "USD",
+  "last_updated": "2024-07-20T00:00:00Z",
+  "restaurant_image": "",
+  "menu": [
+    {
+      "category": "Main Courses / Entrees",
+      "description": "At Italian Restaurant, these main courses showcase the heart of Italian cuisine.",
+      "priority": 1,
+      "items": [
+        {
+          "id": "main_courses_lasagna",
+          "name": "Lasagna",
+          "slug": "lasagna",
+          "description": "Traditional baked pasta with meat ragu, bechamel, and cheese",
+          "price": "18",
+          "tags": [
+            "italian",
+            "pasta"
+          ],
+          "image_prompt": "A photo of a classic lasagna, with layers of pasta, meat sauce, cheese, and bechamel, served at Italian Restaurant.",
+          "images": []
+        },
+        {
+          "id": "main_courses_tagliata_di_manzo",
+          "name": "Tagliata Di Manzo",
+          "slug": "tagliata-di-manzo",
+          "description": "Sliced grilled steak with arugula, cherry tomatoes, and parmesan",
+          "price": "26",
+          "tags": [
+            "italian",
+            "steak"
+          ],
+          "image_prompt": "A beautifully plated Tagliata Di Manzo, with sliced grilled steak, arugula, cherry tomatoes, and parmesan at Italian Restaurant.",
+          "images": []
+        },
+        {
+          "id": "main_courses_risotto_ai_funghi",
+          "name": "Risotto Ai Funghi",
+          "slug": "risotto-ai-funghi",
+          "description": "Creamy risotto with mixed wild mushrooms and parmesan",
+          "price": "22",
+          "tags": [
+            "italian",
+            "risotto",
+            "vegetarian"
+          ],
+          "image_prompt": "A creamy risotto with mixed wild mushrooms and parmesan, presented at Italian Restaurant.",
+          "images": []
+        }
+      ]
+    }
+  ]
+}
