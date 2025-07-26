@@ -4,16 +4,19 @@ import vertexai
 from vertexai.preview.generative_models import GenerativeModel
 from dotenv import load_dotenv
 
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = r"C:\Users\Param\Documents\Credentials\my-vertexai-project-464302-302be09a449a.json"
+
+
 # --- Set environment variables BEFORE importing vertexai ---
 load_dotenv()  # Loads from .env by default
 
 # Now access them like this:
 GOOGLE_VERTEX_LOCATION = os.environ["GOOGLE_VERTEX_LOCATION"]
 GOOGLE_VERTEX_PROJECT = os.environ["GOOGLE_VERTEX_PROJECT"]
-GOOGLE_APPLICATION_CREDENTIALS = os.environ["GOOGLE_APPLICATION_CREDENTIALS"]
+
 # --- Config ---
-PROJECT_ID = os.environ["GOOGLE_VERTEX_PROJECT"]
-LOCATION = os.environ["GOOGLE_VERTEX_LOCATION"]
+PROJECT_ID = GOOGLE_VERTEX_PROJECT
+LOCATION = GOOGLE_VERTEX_LOCATION
 OUTPUT_FILE = "output_menu.json"
 
 # --- Menu Parser Function ---

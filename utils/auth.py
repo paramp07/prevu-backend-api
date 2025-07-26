@@ -1,11 +1,14 @@
 from passlib.context import CryptContext
 from jose import JWTError, jwt
 from datetime import datetime, timedelta, timezone
-
+from fastapi import Request
 from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
 from sqlalchemy.orm import Session
 from database.db import SessionLocal
+from fastapi import Cookie
+from typing import Annotated
+import logging
 from database.models import User  # Make sure this matches your actual User model path
 
 # Constants and settings
@@ -41,10 +44,9 @@ def get_db():
     finally:
         db.close()
 
-# Get current user dependency
 def get_current_user(token: str = Depends(oauth2_scheme), db: Session = Depends(get_db)) -> User:
     credentials_exception = HTTPException(
-        status_code=status.HTTP_401_UNAUTHORIZED,
+        status_code=401,
         detail="Could not validate credentials",
         headers={"WWW-Authenticate": "Bearer"},
     )

@@ -1,0 +1,57 @@
+{
+  "restaurant_name": "Italian Restaurant",
+  "location": null,
+  "description": "At Italian Restaurant, we offer classic Italian dishes made with fresh ingredients.",
+  "currency": "USD",
+  "last_updated": "2024-10-27T00:00:00Z",
+  "restaurant_image": "",
+  "menu": [
+    {
+      "category": "Main Courses / Entrees",
+      "description": "At Italian Restaurant, these are the main dishes.",
+      "priority": 1,
+      "items": [
+        {
+          "id": "main_courses_lasagna",
+          "name": "Lasagna",
+          "slug": "lasagna",
+          "description": "Traditional baked pasta with meat ragu, bechamel, and cheese",
+          "price": "18",
+          "tags": [
+            "italian",
+            "pasta"
+          ],
+          "image_prompt": "A classic photo of Lasagna, baked to perfection, served at Italian Restaurant.",
+          "images": []
+        },
+        {
+          "id": "main_courses_tagliata_di_manzo",
+          "name": "Tagliata Di Manzo",
+          "slug": "tagliata-di-manzo",
+          "description": "Sliced grilled steak with arugula, cherry tomatoes, and parmesan",
+          "price": "26",
+          "tags": [
+            "italian",
+            "steak"
+          ],
+          "image_prompt": "A mouthwatering photo of Tagliata Di Manzo, sliced grilled steak with arugula, cherry tomatoes, and parmesan, served at Italian Restaurant.",
+          "images": []
+        },
+        {
+          "id": "main_courses_risotto_ai_funghi",
+          "name": "Risotto Ai Funghi",
+          "slug": "risotto-ai-funghi",
+          "description": "Creamy risotto with mixed wild mushrooms and parmesan",
+          "price": "22",
+          "tags": [
+            "italian",
+            "risotto",
+            "vegetarian"
+          ],
+          "image_prompt": "A creamy photo of Risotto Ai Funghi, with mixed wild mushrooms and parmesan, served at Italian Restaurant.",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

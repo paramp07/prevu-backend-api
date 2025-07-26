@@ -1,0 +1,57 @@
+{
+  "restaurant_name": "Italian Restaurant",
+  "location": null,
+  "description": "At Italian Restaurant, we offer classic Italian dishes made with fresh ingredients.",
+  "currency": "USD",
+  "last_updated": "2024-07-28T00:00:00Z",
+  "restaurant_image": "",
+  "menu": [
+    {
+      "category": "Main Courses / Entrees",
+      "description": "At Italian Restaurant, our main courses are prepared with traditional recipes.",
+      "priority": 1,
+      "items": [
+        {
+          "id": "main_courses_lasagna",
+          "name": "Lasagna",
+          "slug": "lasagna",
+          "description": "Traditional baked pasta with meat ragu, bechamel, and cheese",
+          "price": "18",
+          "tags": [
+            "italian",
+            "pasta"
+          ],
+          "image_prompt": "A delicious photo of Lasagna, baked pasta with meat ragu, bechamel, and cheese, served at Italian Restaurant.",
+          "images": []
+        },
+        {
+          "id": "main_courses_tagliata_di_manzo",
+          "name": "Tagliata Di Manzo",
+          "slug": "tagliata-di-manzo",
+          "description": "Sliced grilled steak with arugula, cherry tomatoes, and parmesan",
+          "price": "26",
+          "tags": [
+            "italian",
+            "steak"
+          ],
+          "image_prompt": "A beautiful plate of Tagliata Di Manzo, sliced grilled steak with arugula, cherry tomatoes, and parmesan, at Italian Restaurant.",
+          "images": []
+        },
+        {
+          "id": "main_courses_risotto_ai_funghi",
+          "name": "Risotto Ai Funghi",
+          "slug": "risotto-ai-funghi",
+          "description": "Creamy risotto with mixed wild mushrooms and parmesan",
+          "price": "22",
+          "tags": [
+            "italian",
+            "risotto",
+            "vegetarian"
+          ],
+          "image_prompt": "A creamy Risotto Ai Funghi with mixed wild mushrooms and parmesan, presented at Italian Restaurant.",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

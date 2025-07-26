@@ -1,0 +1,58 @@
+{
+  "restaurant_name": "Italian Restaurant",
+  "location": null,
+  "description": "At Italian Restaurant, we serve classic Italian dishes made with fresh ingredients. Our menu features traditional pasta dishes and grilled meats.",
+  "currency": "USD",
+  "last_updated": "2024-07-20T00:00:00Z",
+  "restaurant_image": "",
+  "menu": [
+    {
+      "category": "Main Courses / Entrees",
+      "description": "At Italian Restaurant, our main courses are prepared with authentic Italian flavors.",
+      "priority": 1,
+      "items": [
+        {
+          "id": "main_courses_lasagna",
+          "name": "Lasagna",
+          "slug": "lasagna",
+          "description": "Traditional baked pasta with meat ragu, bechamel, and cheese",
+          "price": "18",
+          "tags": [
+            "pasta",
+            "meat",
+            "italian"
+          ],
+          "image_prompt": "A photo of a traditional lasagna with meat ragu, bechamel, and cheese, served at Italian Restaurant.",
+          "images": []
+        },
+        {
+          "id": "main_courses_tagliata_di_manzo",
+          "name": "Tagliata Di Manzo",
+          "slug": "tagliata-di-manzo",
+          "description": "Sliced grilled steak with arugula, cherry tomatoes, and parmesan",
+          "price": "26",
+          "tags": [
+            "steak",
+            "italian"
+          ],
+          "image_prompt": "A photo of sliced grilled steak with arugula, cherry tomatoes, and parmesan, served at Italian Restaurant.",
+          "images": []
+        },
+        {
+          "id": "main_courses_risotto_ai_funghi",
+          "name": "Risotto Ai Funghi",
+          "slug": "risotto-ai-funghi",
+          "description": "Creamy risotto with mixed wild mushrooms and parmesan",
+          "price": "22",
+          "tags": [
+            "vegetarian",
+            "risotto",
+            "italian"
+          ],
+          "image_prompt": "A photo of creamy risotto with mixed wild mushrooms and parmesan, served at Italian Restaurant.",
+          "images": []
+        }
+      ]
+    }
+  ]
+}

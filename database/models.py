@@ -42,7 +42,14 @@ user_favorite_menu_items = Table(
 class Restaurant(Base):
     __tablename__ = "restaurants"
 
-    id = Column(Integer, primary_key=True, index=True)
+    id = Column(
+        SQLAlchemyUUID(as_uuid=True),
+        primary_key=True,
+        default=uuid.uuid4,
+        index=True,
+        unique=True,
+        nullable=False,
+    )
     name = Column(String, index=True, nullable=False)
     location = Column(String, nullable=True)
     description = Column(Text, nullable=True)
@@ -50,23 +57,59 @@ class Restaurant(Base):
     last_updated = Column(DateTime, default=datetime.utcnow, nullable=False)
     restaurant_image = Column(String, nullable=True)
 
+    menus = relationship(
+        "Menu",
+        back_populates="restaurant",
+        cascade="all, delete-orphan"
+    )
+
+
+class Menu(Base):
+    __tablename__ = "menus"
+
+    id = Column(
+        SQLAlchemyUUID(as_uuid=True),
+        primary_key=True,
+        default=uuid.uuid4,
+        index=True,
+        unique=True,
+        nullable=False,
+    )
+    title = Column(String, nullable=False)  # e.g., "Dinner Menu", "Fall Specials"
+    description = Column(Text, nullable=True)
+    last_parsed = Column(DateTime, default=datetime.utcnow)
+    enriched = Column(String, default="pending")  # or a boolean or enum
+
+    restaurant_id = Column(Integer, ForeignKey("restaurants.id"), nullable=False)
+    restaurant = relationship("Restaurant", back_populates="menus")
+
     categories = relationship(
         "Category",
-        back_populates="restaurant",
-        cascade="all, delete-orphan",
+        back_populates="menu",
+        cascade="all, delete-orphan"
     )
 
 
 class Category(Base):
     __tablename__ = "categories"
 
-    id = Column(Integer, primary_key=True, index=True)
+    id = Column(
+        SQLAlchemyUUID(as_uuid=True),
+        primary_key=True,
+        default=uuid.uuid4,
+        index=True,
+        unique=True,
+        nullable=False,
+    )
     category = Column(String, nullable=False)
     description = Column(Text, nullable=True)
     priority = Column(Integer, nullable=True)
 
     restaurant_id = Column(Integer, ForeignKey("restaurants.id"), nullable=False)
-    restaurant = relationship("Restaurant", back_populates="categories")
+    restaurant = relationship("Restaurant")  # Keep this if you still want a direct link
+
+    menu_id = Column(Integer, ForeignKey("menus.id"), nullable=False)
+    menu = relationship("Menu", back_populates="categories")
 
     items = relationship(
         "MenuItem",
@@ -75,10 +118,18 @@ class Category(Base):
     )
 
 
+
 class MenuItem(Base):
     __tablename__ = "menu_items"
 
-    id = Column(String, primary_key=True, index=True)  # e.g. "main_courses_lasagna"
+    id = Column(
+        SQLAlchemyUUID(as_uuid=True),
+        primary_key=True,
+        default=uuid.uuid4,
+        index=True,
+        unique=True,
+        nullable=False,
+    )  # e.g. "main_courses_lasagna"
     name = Column(String, nullable=False)
     slug = Column(String, unique=True, index=True, nullable=False)
     description = Column(Text, nullable=True)
