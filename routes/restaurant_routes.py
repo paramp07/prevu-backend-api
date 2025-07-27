@@ -48,21 +48,28 @@ def get_db():
         db.close()
 
 
-
-
 @router.post("/parse_menu/", response_model=RestaurantOut)
 async def parse_menu(file: UploadFile = File(...), db: Session = Depends(get_db)):
-    # Step 1: Parse the uploaded file to get restaurant + menu data dict
+    # Step 1: Parse uploaded file to get restaurant + menu data dict
     parsed_data = await handle_parse_menu(file)
-    
-    # Step 2: Create restaurant with menu in DB (do not pass id manually)
+    restaurant_name = parsed_data.get("restaurant_name")
+
+    if not restaurant_name:
+        raise HTTPException(status_code=400, detail="Missing restaurant name in parsed data")
+
+    # Step 2: Check if restaurant already exists by name
+    existing_restaurant = db.query(Restaurant).filter(Restaurant.name == restaurant_name).first()
+    if existing_restaurant:
+        return existing_restaurant
+
+    # Step 3: Create restaurant with menu in DB
     try:
         restaurant = crud.create_restaurant_with_menu(db, parsed_data)
     except Exception as e:
         traceback.print_exc()
         raise HTTPException(status_code=500, detail=f"DB insert failed: {str(e)}")
-    
-    # Step 3: Return the created restaurant object (auto converts UUID id)
+
+    # Step 4: Return the created restaurant object
     return restaurant
 
 @router.post("/enrich_menu/")

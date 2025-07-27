@@ -1,14 +1,14 @@
 {
   "restaurant_name": "Italian Restaurant",
   "location": null,
-  "description": "Italian Restaurant offers classic Italian dishes with fresh ingredients.",
+  "description": "At Italian Restaurant, we serve classic Italian dishes made with fresh ingredients.",
   "currency": "USD",
-  "last_updated": "2024-10-27T00:00:00Z",
+  "last_updated": "2024-07-27T00:00:00Z",
   "restaurant_image": "",
   "menu": [
     {
       "category": "Main Courses / Entrees",
-      "description": "At Italian Restaurant, enjoy hearty main courses.",
+      "description": "At Italian Restaurant, our main courses are prepared with passion.",
       "priority": 1,
       "items": [
         {
@@ -21,7 +21,7 @@
             "italian",
             "pasta"
           ],
-          "image_prompt": "A photo of Lasagna, traditional baked pasta with meat ragu, bechamel, and cheese, served at Italian Restaurant.",
+          "image_prompt": "A delicious photo of lasagna, a traditional baked pasta dish with meat ragu, bechamel, and cheese at Italian Restaurant.",
           "images": []
         },
         {
@@ -34,7 +34,7 @@
             "italian",
             "steak"
           ],
-          "image_prompt": "A photo of Tagliata Di Manzo, sliced grilled steak with arugula, cherry tomatoes, and parmesan, served at Italian Restaurant.",
+          "image_prompt": "An elegant photo of tagliata di manzo, sliced grilled steak with arugula, cherry tomatoes, and parmesan, served at Italian Restaurant.",
           "images": []
         },
         {
@@ -44,11 +44,11 @@
           "description": "Creamy risotto with mixed wild mushrooms and parmesan",
           "price": "22",
           "tags": [
+            "vegetarian",
             "italian",
-            "risotto",
-            "vegetarian"
+            "risotto"
           ],
-          "image_prompt": "A photo of Risotto Ai Funghi, creamy risotto with mixed wild mushrooms and parmesan, served at Italian Restaurant.",
+          "image_prompt": "A beautiful photo of risotto ai funghi, creamy risotto with mixed wild mushrooms and parmesan, served at Italian Restaurant.",
           "images": []
         }
       ]
